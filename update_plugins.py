@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+"""
+更新插件包
+"""
+
 try:
     import concurrent.futures as futures
 except ImportError:
