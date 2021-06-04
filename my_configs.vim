@@ -28,3 +28,24 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 set cursorline  "设置光标高亮行
 
+
+"*********************vim-gitgutter配置***************************
+set updatetime=100  " 追踪变更的时间
+
+" git的增删改在状态栏显示
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
+
+" 设置标志列的颜色
+highlight! link SignColumn LineNr
+
+" 设置增，删，改的图标颜色
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+nmap ghp <Plug>(GitGutterPreviewHunk)
+
