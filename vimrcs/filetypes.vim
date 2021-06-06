@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""
-" => Python section
+" => Python 选项
 """"""""""""""""""""""""""""""
 let python_highlight_all = 1
 au FileType python syn keyword pythonDecorator True None False self
@@ -20,7 +20,7 @@ au FileType python map <buffer> <leader>D ?def
 
 
 """"""""""""""""""""""""""""""
-" => JavaScript section
+" => JavaScript 选项
 """""""""""""""""""""""""""""""
 au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen

@@ -20,7 +20,7 @@
 "    -> 状态栏
 "    -> 编辑映射
 "    -> vimgrep searching and cope displaying
-"    -> Spell checking
+"    -> 拼写检查
 "    -> Misc
 "    -> Helper functions
 "
@@ -41,7 +41,7 @@ filetype indent on
 set autoread
 au FocusGained,BufEnter * checktime
 
-" 使用 , 来代替 shift键，从而扩展性更高，下面的所有 <leader> 都表示 ,
+" 使用 , 来代替shift键，从而扩展性更高，下面的所有 <leader> 都表示 ,
 let mapleader = ","
 
 " ,w 快速保存
@@ -189,36 +189,36 @@ set wrap "Wrap lines
 
 
 """"""""""""""""""""""""""""""
-" => Visual mode related
+" => 可视模式相关
 """"""""""""""""""""""""""""""
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
+" 可视模式下，使用 * 或者 # 来搜索当前选中的词
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
+" => 移动，tab，窗口相关
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+" 使用空格键 来代替 / 快速搜索，使用 ctrl + 空格来 获取帮助
 map <space> /
 map <C-space> ?
 
-" Disable highlight when <leader><cr> is pressed
+" 按下 ,+enter 键来禁用选中文字的高亮
 map <silent> <leader><cr> :noh<cr>
 
-" Smart way to move between windows
+" 在窗口之间只能移动
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Close the current buffer
+" , + b + d 关闭当前的缓冲区文件
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
-" Close all the buffers
+" 关闭所有的缓冲区文件
 map <leader>ba :bufdo bd<cr>
 
+" 上/下一个缓冲区文件
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
 
@@ -235,8 +235,7 @@ nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
 
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
+" 使用当前文件的路径来打开一个 tab， 当编辑的文件在同一个目录下会非常有用
 map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 
 " Switch CWD to the directory of the open buffer
@@ -249,7 +248,7 @@ try
 catch
 endtry
 
-" Return to last edit position when opening files (You want this!)
+" 当打开文件的时候回到上次编辑的位置
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
@@ -264,9 +263,9 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
+" => 键盘映射
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remap VIM 0 to first non-blank character
+" 使用 0 来回到行的第一个非空字符
 map 0 ^
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
@@ -282,7 +281,7 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
-" Delete trailing white space on save, useful for some filetypes ;)
+" 当保存文件的时候删除文件尾部的空格，对于某些文件类型来说非常有用
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
     let old_query = getreg('/')
@@ -297,12 +296,12 @@ endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
+" => 拼写检查 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pressing ,ss will toggle and untoggle spell checking
+" 使用 , + s + s 来切换是否使用拼写检查
 map <leader>ss :setlocal spell!<cr>
 
-" Shortcuts using <leader>
+" 使用 , 的快捷键
 map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
@@ -326,7 +325,7 @@ map <leader>pp :setlocal paste!<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
+" => 帮助函数
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Returns true if paste mode is enabled
 function! HasPaste()
@@ -336,7 +335,7 @@ function! HasPaste()
     return ''
 endfunction
 
-" Don't close window, when deleting a buffer
+" 当删除一个 buffer 的时候不要关闭窗口
 command! Bclose call <SID>BufcloseCloseIt()
 function! <SID>BufcloseCloseIt()
     let l:currentBufNum = bufnr("%")

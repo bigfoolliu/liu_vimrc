@@ -6,9 +6,9 @@
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => GUI related
+" => 用户界面相关
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set font according to system
+" 根据文件系统设置字体
 if has("mac") || has("macunix")
     set gfn=IBM\ Plex\ Mono:h14,Hack:h14,Source\ Code\ Pro:h15,Menlo:h15
 elseif has("win16") || has("win32")
@@ -21,19 +21,19 @@ elseif has("unix")
     set gfn=Monospace\ 11
 endif
 
-" Disable scrollbars (real hackers don't use scrollbars for navigation!)
+" 禁用滚动条（真正的黑客不用滚动条）
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 
-" Colorscheme
+" 颜色方案, 配色方案可选：peaksea（默认值），
 set background=dark
 colorscheme peaksea
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fast editing and reloading of vimrc configs
+" => 快速编辑和重载vimrc的配置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>e :e! ~/.vim_runtime/my_configs.vim<cr>
 autocmd! bufwritepost ~/.vim_runtime/my_configs.vim source ~/.vim_runtime/my_configs.vim
@@ -78,7 +78,7 @@ imap ½ $
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Parenthesis/bracket
+" => 括号相关
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vnoremap $1 <esc>`>a)<esc>`<i(<esc>
 vnoremap $2 <esc>`>a]<esc>`<i[<esc>
@@ -87,7 +87,7 @@ vnoremap $$ <esc>`>a"<esc>`<i"<esc>
 vnoremap $q <esc>`>a'<esc>`<i'<esc>
 vnoremap $e <esc>`>a`<esc>`<i`<esc>
 
-" Map auto complete of (, ", ', [
+" 括号自动补全: (, ", ', [
 inoremap $1 ()<esc>i
 inoremap $2 []<esc>i
 inoremap $3 {}<esc>i
@@ -109,21 +109,20 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ack searching and cope displaying
-"    requires ack.vim - it's much better than vimgrep/grep
+" => ack的搜索和展示，需要安装 ack.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use the the_silver_searcher if possible (much faster than Ack)
+" 如果有 ag ，使用 ag 命令来替代 ack 搜索，比ack 快的多
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case'
 endif
 
-" When you press gv you Ack after the selected text
+" 选中文本，使用 gv 来搜索选中的文本
 vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 
-" Open Ack and put the cursor in the right position
+" 打开ack并将光标放到当前的位置
 map <leader>g :Ack 
 
-" When you press <leader>r you can search and replace the selected text
+" 按 ,r 搜索并替换选定的文本
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
 " Do :help cope if you are unsure what cope is. It's super useful!
@@ -147,7 +146,7 @@ autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
+" => 帮助函数
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 func! DeleteTillSlash()
     let g:cmd = getcmdline()
