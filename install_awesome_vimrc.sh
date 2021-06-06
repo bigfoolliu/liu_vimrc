@@ -1,7 +1,15 @@
 #!/bin/sh
 set -e
 
+
+vimrc="~/.vimrc"
+if [ -f "$vimrc" ]; then
+    echo "copy origin .vimrc to .vimrc_backup"
+    cp "$vimrc" ~/.vimrc_backup
+fi
+
 cd ~/.vim_runtime
+
 
 echo 'set runtimepath+=~/.vim_runtime
 
