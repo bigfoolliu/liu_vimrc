@@ -57,7 +57,7 @@ au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
 
 """"""""""""""""""""""""""""""
-" => Shell section
+" => Shell 相关
 """"""""""""""""""""""""""""""
 if exists('$TMUX') 
     if has('nvim')
