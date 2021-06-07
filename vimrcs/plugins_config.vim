@@ -92,6 +92,8 @@ map <leader>nb :NERDTreeFromBookmark<Space>
 " 快速查找文件
 map <leader>nf :NERDTreeFind<cr>
 
+" 关闭vim时，如果打开的文件除了NERDTree没有其他文件时，它自动关闭，减少多次按:q!
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-multiple-cursors
