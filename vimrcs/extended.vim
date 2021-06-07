@@ -119,8 +119,8 @@ endif
 " 选中文本，使用 gv 来搜索选中的文本
 vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 
-" 打开ack并将光标放到当前的位置
-map <leader>g :Ack 
+" ,g 打开ack并将光标放到当前的位置，使用!可以不自动打开第一个搜索到文件
+map <leader>g :Ack!
 
 " 按 ,r 搜索并替换选定的文本
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>

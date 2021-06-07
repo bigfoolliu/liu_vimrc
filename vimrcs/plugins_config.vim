@@ -42,7 +42,7 @@ nmap <C-n> <Plug>yankstack_substitute_newer_paste
 
 
 """"""""""""""""""""""""""""""
-" => CTRL-P
+" => CTRL-P 快速找文件
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
 
@@ -86,8 +86,10 @@ let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
+" 快速打开或关闭NERDTree
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
+" 快速查找文件
 map <leader>nf :NERDTreeFind<cr>
 
 
