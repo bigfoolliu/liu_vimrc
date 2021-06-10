@@ -6,7 +6,7 @@
 
 
 """"""""""""""""""""""""""""""
-" => Load pathogen paths
+" => Load pathogen paths插件管理
 """"""""""""""""""""""""""""""
 let s:vim_runtime = expand('<sfile>:p:h')."/.."
 call pathogen#infect(s:vim_runtime.'/sources_forked/{}')
@@ -16,7 +16,7 @@ call pathogen#helptags()
 
 
 """"""""""""""""""""""""""""""
-" => bufExplorer plugin
+" => bufExplorer plugino快速打开历史文件列表
 """"""""""""""""""""""""""""""
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1
@@ -26,7 +26,7 @@ map <leader>o :BufExplorer<cr>
 
 
 """"""""""""""""""""""""""""""
-" => MRU plugin
+" => MRU plugin最近最常打开的文件
 """"""""""""""""""""""""""""""
 let MRU_Max_Entries = 400
 map <leader>f :MRU<CR>
@@ -42,7 +42,7 @@ nmap <C-n> <Plug>yankstack_substitute_newer_paste
 
 
 """"""""""""""""""""""""""""""
-" => CTRL-P 快速找文件
+" => CTRL-P 快速找文件,在当前目录以及子目录
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
 
@@ -120,14 +120,14 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => lightline
+" => lightline 配置状态栏
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
       \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-      \   'right': [ [ 'lineinfo' ], ['percent'] ]
+      \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
       \ },
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
