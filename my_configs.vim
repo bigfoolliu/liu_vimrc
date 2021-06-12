@@ -8,6 +8,19 @@ set wrap  "设置文字自动换行，不超过当前窗口
 set clipboard+=unnamed   "和系统共用一个剪贴板
 xnoremap p pgvy  "粘贴时不置换剪贴板,可以一次复制多次粘贴
 
+" 编辑模式下键盘映射，可以快速移动
+" ctrl+hjkl上下左右移动，b/f翻页
+inoremap <C-o> <Esc>
+inoremap <C-l> <Right>
+inoremap <C-h> <Left>
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
+inoremap <C-b> <PageUp>
+inoremap <C-f> <PageDown>
+
+" 插入模式下ctr+a/e快速移动到行首和行尾
+inoremap <C-A> <Esc>^
+inoremap <C-E> <Esc>$
 
 "*********************光标配置***************************
 "设置不同模式下的光标
