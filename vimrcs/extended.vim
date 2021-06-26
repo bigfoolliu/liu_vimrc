@@ -40,8 +40,7 @@ autocmd! bufwritepost ~/.vim_runtime/my_configs.vim source ~/.vim_runtime/my_con
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Turn persistent undo on 
-"    means that you can undo even when you close a buffer/VIM
+" => 打开持续撤销，意味着你即使关闭了 bufffer/VIM，仍然可以
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
     set undodir=~/.vim_runtime/temp_dirs/undodir
@@ -53,7 +52,7 @@ endtry
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 命令模式相关
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Smart mappings on the command line
+" 命令行智能映射
 cno $h e ~/
 cno $d e ~/Desktop/
 cno $j e ./
@@ -97,7 +96,7 @@ inoremap $e ""<esc>i
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General abbreviations
+" => 通用缩写
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 

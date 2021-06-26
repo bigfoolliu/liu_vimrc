@@ -167,19 +167,19 @@ set noswapfile
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
+" => 文本，tab和缩进相关
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
+" 使用空格代替tab
 set expandtab
 
-" Be smart when using tabs ;)
+" 智能tab
 set smarttab
 
-" 1 tab == 4 spaces
+" 1 tab == 4 空格
 set shiftwidth=4
 set tabstop=4
 
-" Linebreak on 500 characters
+" 五百个字符就有换行符
 set lbr
 set tw=500
 
@@ -229,7 +229,7 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 map <leader>t<leader> :tabnext 
 
-" Let 'tl' toggle between this and the last accessed tab
+" 使用 ‘tl’ 在当前和上一个tab之间切换
 let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
@@ -269,6 +269,7 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 map 0 ^
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
+" 使用 ALT + [jk]或者Command + [jk] 来移动一行文本
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
@@ -311,23 +312,23 @@ map <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remove the Windows ^M - when the encodings gets messed up
+" 移除windows系统的 ^M 当编码错误的时候
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Quickly open a buffer for scribble
+" 快速打开一个buffer
 map <leader>q :e ~/buffer<cr>
 
-" Quickly open a markdown buffer for scribble
+" 迅速打开一个 markdown 类型的buffer
 map <leader>x :e ~/buffer.md<cr>
 
-" Toggle paste mode on and off
+" 切换粘贴模式的开关
 map <leader>pp :setlocal paste!<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 帮助函数
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Returns true if paste mode is enabled
+" 如果粘贴模式打开则返回 true
 function! HasPaste()
     if &paste
         return 'PASTE MODE  '
