@@ -54,16 +54,16 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM 用户界面
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 lines to the cursor - when moving vertically using j/k
+" 当垂直使用j/k来移动光标的时候,将光标设置为7行
 set so=7
 
-" Avoid garbled characters in Chinese language windows OS
+" 在中文WINDOWS OS中避免乱码
 let $LANG='en' 
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-" Turn on the Wild menu
+" 打开宽的菜单
 set wildmenu
 
 " 忽略编译过的文件
@@ -76,20 +76,23 @@ endif
 
 " 显示当前行号
 set ruler
+
 " 命令行的高度
 set cmdheight=1
 
-" A buffer becomes hidden when it is abandoned
+" 当buffer禁用的时候隐藏
 set hid
 
-" Configure backspace so it acts as it should act
+" 配置退格键，使其按照应有的方式运行
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 " 搜索的时候忽略大小写
 set ignorecase
+
 " 搜索的时候大小写智能
 set smartcase
+
 " 高亮搜索到的结果
 set hlsearch
 
@@ -104,6 +107,7 @@ set magic
 
 " 光标移动到括号的一边的时候，显示匹配的括号
 set showmatch 
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -119,7 +123,7 @@ if has("gui_macvim")
 endif
 
 
-" Add a bit extra margin to the left
+" 在左侧加一点边距
 set foldcolumn=1
 
 
@@ -142,7 +146,7 @@ endtry
 "设置背景色为黑色
 set background=dark
 
-" Set extra options when running in GUI mode
+" 当运行在GUI模式的时候，设置的一些额外的参数
 if has("gui_running")
     set guioptions-=T
     set guioptions-=e
@@ -152,6 +156,7 @@ endif
 
 " 设置文件编码为utf8
 set encoding=utf8
+
 " 设置标准文件类型
 set ffs=unix,dos,mac
 
@@ -159,7 +164,6 @@ set ffs=unix,dos,mac
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 文件和备份，撤销
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git etc. anyway...
 " 关闭文件备份，因为文件一般使用git等来管理
 set nobackup
 set nowb
