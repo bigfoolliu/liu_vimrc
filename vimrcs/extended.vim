@@ -29,9 +29,9 @@ set guioptions-=L
 
 " 颜色方案, 配色方案可选：peaksea（默认值），dracula，vim-colors-solarized，vim-irblack，vim-pyte，mayansmoke
 set background=dark
-colorscheme peaksea
+" colorscheme peaksea
 " colorscheme dracula
-
+colorscheme palenight
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 快速编辑和重载vimrc的配置

@@ -3,6 +3,16 @@
 - 项目来自于：https://github.com/amix/vimrc ,自己加了写注释和改动。
 - 我的项目目录：https://github.com/bigfoolliu/liu_vimrc
 
+注意：
+
+my_configs.vim是个人的配置，my_plugins是我需要个性化安装的插件，比如不同的主题等
+安装其他的插件，插件管理使用pathogen，如果是安装vim-rails:
+
+```sh
+cd ~/.vim_runtime
+git clone git://github.com/tpope/vim-rails.git my_plugins/vim-rails
+```
+
 ## 1.基本快捷键
 
 ```sh
