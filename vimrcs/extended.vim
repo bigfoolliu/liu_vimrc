@@ -85,7 +85,7 @@ vnoremap $2 <esc>`>a]<esc>`<i[<esc>
 vnoremap $3 <esc>`>a}<esc>`<i{<esc>
 vnoremap $$ <esc>`>a"<esc>`<i"<esc>
 vnoremap $q <esc>`>a'<esc>`<i'<esc>
-vnoremap $e <esc>`>a`<esc>`<i`<esc>
+" vnoremap $e <esc>`>a`<esc>`<i`<esc> " 不使用斜号自动补全
 
 " 括号自动补全: (, ", ', [
 inoremap $1 ()<esc>i
@@ -93,8 +93,7 @@ inoremap $2 []<esc>i
 inoremap $3 {}<esc>i
 inoremap $4 {<esc>o}<esc>O
 " inoremap $q ''<esc>i  " 不使用单引号自动补全
-inoremap $e ""<esc>i
-
+" inoremap $e ""<esc>i  " 不使用双引号自动补全
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 通用缩写
