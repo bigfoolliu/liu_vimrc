@@ -63,7 +63,7 @@ cno $c e <C-\>eCurrentFileDir("e")<cr>
 " it deletes everything until the last slash 
 cno $q <C-\>eDeleteTillSlash()<cr>
 
-" Bash like keys for the command line
+" 命令模式下,保持和bash的模式一致,使用 ctrl + a 跳转到命令首部, ctrl + e 到命令尾部
 cnoremap <C-A>		<Home>
 cnoremap <C-E>		<End>
 cnoremap <C-K>		<C-U>
@@ -87,7 +87,7 @@ vnoremap $$ <esc>`>a"<esc>`<i"<esc>
 vnoremap $q <esc>`>a'<esc>`<i'<esc>
 " vnoremap $e <esc>`>a`<esc>`<i`<esc> " 不使用斜号自动补全
 
-" 括号自动补全: (, ", ', [
+" 插入模式下,括号自动补全: (, ", ', [
 inoremap $1 ()<esc>i
 inoremap $2 []<esc>i
 inoremap $3 {}<esc>i
@@ -169,4 +169,3 @@ endfunc
 
 func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
-endfunc
