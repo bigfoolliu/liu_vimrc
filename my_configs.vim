@@ -25,6 +25,9 @@ inoremap <C-f> <PageDown>  "插入模式ctrl+f可以向下翻页
 inoremap <C-A> <Esc>^  "插入模式ctrl+a快速移动到行首
 inoremap <C-E> <Esc>$  "插入模式ctrl+e快速移动到行尾
 
+"*********************普通模式配置***************************
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>  "普通模式将ctrl+l除了原有功能之外,还增加取消高亮搜索功能
+
 "*********************光标配置***************************
 "设置不同模式下的光标
 let &t_SI.="\e[5 q" "SI = INSERT mode
