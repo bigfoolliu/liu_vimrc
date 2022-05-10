@@ -1,16 +1,6 @@
 # liu_vimrc
 
-* [1.使用概述](#1.使用概述)
-* [2.基本快捷键](#2.基本快捷键)
-* [3.插件快捷键](#3.插件快捷键)
-  * [3.1ack全局查找](#3.1ack全局查找)
-  * [3.2nerdtree目录树](#3.2nerdtree目录树)
-  * [3.2commentary注释](#3.2commentary注释)
-  * [3.3ctrlp查找目录文件](#3.3ctrlp查找目录文件)
-  * [3.4lightline状态栏配置](#3.4lightline状态栏配置)
-  * [3.5bufexplorer历史文件](#3.5bufexplorer历史文件)
-  * [3.6MRU最近打开的文件](#3.6mru最近打开的文件)
-  * [3.7vim markdown用来支持生成markdown文件](#3.7vim-markdown用来支持生成markdown文件)
+[toc]
 
 ## 1.使用概述
 
@@ -27,14 +17,61 @@ git clone git://github.com/tpope/vim-rails.git my_plugins/vim-rails
 
 ## 2.基本快捷键
 
+leader表示,
+
+### 2.1normal模式
+
 ```sh
 # 使用,代替shift
 # 使用空格键代替/
-
-, + enter  # 取消选中高亮
+ctrl + l  # 取消任意的高亮
 
 ,w  # 快速保存
 ,W  # 使用sudo保存文件
+```
+
+使用 ,enter 可以取消高亮选择
+
+```txt
+map <silent> <leader><cr> :noh<cr>
+```
+
+### 2.2窗口管理
+
+```txt
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+```
+
+### 2.3可视模式
+
+可以将选中的内容实用不用括号或者引号标注:
+
+```txt
+vnoremap $1 <esc>`>a)<esc>`<i(<esc>
+vnoremap $2 <esc>`>a]<esc>`<i[<esc>
+vnoremap $3 <esc>`>a}<esc>`<i{<esc>
+vnoremap $$ <esc>`>a"<esc>`<i"<esc>
+vnoremap $q <esc>`>a'<esc>`<i'<esc>
+vnoremap $e <esc>`>a`<esc>`<i`<esc>
+```
+
+### 2.4插入模式
+
+插入模式下输入 xdate, 然后esc即可输入当前时间:
+
+```txt
+iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
+```
+
+### 2.5命令模式
+
+如果编辑需要sudo的文件:
+
+```txt
+:W
 ```
 
 ## 3.插件快捷键

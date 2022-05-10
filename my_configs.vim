@@ -99,6 +99,3 @@ highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
 nmap ghp <Plug>(GitGutterPreviewHunk)
 
-
-"*********************commentary.vim配置***************************
-

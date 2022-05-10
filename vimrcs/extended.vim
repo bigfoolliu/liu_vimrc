@@ -98,8 +98,10 @@ inoremap $4 {<esc>o}<esc>O
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 通用缩写
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
-
+" 插入模式输入xdate然后esc退出,则按照格式输入时间日期, 20数字额外加的
+iab xdate <C-r>=strftime("20%y/%d/%m")<cr>
+iab xdatetime <C-r>=strftime("20%y/%d/%m %H:%M:%S")<cr>
+iab xtime <C-r>=strftime("%H:%M:%S")<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Omni complete functions
