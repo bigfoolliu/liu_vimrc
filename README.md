@@ -36,13 +36,18 @@ ctrl + l  # 取消任意的高亮
 map <silent> <leader><cr> :noh<cr>
 ```
 
+
+
 ### 2.2窗口管理
 
-```txt
-map <leader>tn :tabnew<cr>
+```sh
+map <leader>tn :tabnew<cr>  # 新增一个窗口
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
+map <leader>tm :tabmove 
+
+# 打开一个新的窗口,主要针对是当前目录下的文件
+map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 ```
 
 ### 2.3可视模式
@@ -113,6 +118,9 @@ gcu  # 可以取消多行注释
 ```sh
 ,j  # 查找当前目录下的文件
 ctrl + f  # 同上
+
+,f  # 搜索打开最近打开过的文件
+,b  # 搜索打开一个buffer
 ```
 
 ### 3.4lightline状态栏配置
@@ -145,5 +153,11 @@ q  # 退出
 ]u  # 跳转到父级的header
 
 :InsertToc  # 在当前位置插入toc
+```
+
+### 3.8goyo.vim和vim-zenroom2
+
+```sh
+,z  # 进入或者退出专注模式,主要针对markdown文件
 ```
 
