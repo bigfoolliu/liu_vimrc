@@ -60,11 +60,20 @@ vnoremap $e <esc>`>a`<esc>`<i`<esc>
 
 ### 2.4插入模式
 
+- [vim缩写](https://copyfuture.com/blogs-details/20200827171424316v9mveqvpxz76a3j)
+
 插入模式下输入 xdate, 然后esc即可输入当前时间:
 
 ```txt
 iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 ```
+
+输入xdate，之后：
+
+- Ctrl + ] ：插入缩写后停留在插入模式，推荐；
+- ESC ：插入缩写后回到普通模式；
+- Space ：插入缩写后增加空格；
+- Enter ：插入缩写后进行换行。
 
 ### 2.5命令模式
 
