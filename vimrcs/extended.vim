@@ -31,7 +31,8 @@ set guioptions-=L
 set background=dark
 " colorscheme peaksea
 " colorscheme dracula
-colorscheme palenight
+" colorscheme palenight
+colorscheme onedark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 快速编辑和重载vimrc的配置
@@ -107,7 +108,6 @@ iab xtime <C-r>=strftime("%H:%M:%S")<cr>
 " => Omni complete functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ack的搜索和展示，需要安装 ack.vim

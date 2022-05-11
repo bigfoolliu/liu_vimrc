@@ -1,12 +1,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Important:
-"       This requires that you install https://github.com/amix/vimrc !
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" This requires that you install https://github.com/amix/vimrc !
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
-" => Load pathogen paths插件管理
+" => 加载pathogen路径进行插件管理
 """"""""""""""""""""""""""""""
 let s:vim_runtime = expand('<sfile>:p:h')."/.."
 call pathogen#infect(s:vim_runtime.'/sources_forked/{}')
@@ -22,6 +19,7 @@ let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerFindActive=1
 let g:bufExplorerSortBy='name'
+" 使用 ,o 打开buffer列表
 map <leader>o :BufExplorer<cr>
 
 
@@ -29,6 +27,7 @@ map <leader>o :BufExplorer<cr>
 " => MRU plugin最近最常打开的文件
 """"""""""""""""""""""""""""""
 let MRU_Max_Entries = 400
+" 使用 ,f 搜索打开最近的文件
 map <leader>f :MRU<CR>
 
 
@@ -37,6 +36,7 @@ map <leader>f :MRU<CR>
 """"""""""""""""""""""""""""""
 let g:yankstack_yank_keys = ['y', 'd']
 
+" ctrl + p 可以记住最近的yank,包括删除的,复制的内容
 nmap <C-p> <Plug>yankstack_substitute_older_paste
 nmap <C-n> <Plug>yankstack_substitute_newer_paste
 
@@ -46,11 +46,11 @@ nmap <C-n> <Plug>yankstack_substitute_newer_paste
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
 
-" Quickly find and open a file in the current working directory
+" ,j 快速搜索和打开当前工作目录下的文件
 let g:ctrlp_map = '<C-f>'
 map <leader>j :CtrlP<cr>
 
-" Quickly find and open a buffer
+" 快速搜索和打开一个buffer
 map <leader>b :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
@@ -86,9 +86,11 @@ let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
+
 " 快速打开或关闭NERDTree
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
+
 " 快速查找文件
 map <leader>nf :NERDTreeFind<cr>
 
@@ -161,6 +163,7 @@ let g:ale_linters = {
 \   'go': ['go', 'golint', 'errcheck']
 \}
 
+"   'python': ['flake8'],
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
 " Disabling highlighting
@@ -172,7 +175,8 @@ let g:ale_lint_on_enter = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Git gutter (Git diff)
+" => Git gutter (Git diff), git对比
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
