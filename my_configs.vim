@@ -98,4 +98,3 @@ highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
 nmap ghp <Plug>(GitGutterPreviewHunk)
-

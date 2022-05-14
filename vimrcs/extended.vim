@@ -81,6 +81,8 @@ imap ½ $
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 括号相关
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 将选中的文本包括在指定的括号中
 vnoremap $1 <esc>`>a)<esc>`<i(<esc>
 vnoremap $2 <esc>`>a]<esc>`<i[<esc>
 vnoremap $3 <esc>`>a}<esc>`<i{<esc>
@@ -96,6 +98,7 @@ inoremap $4 {<esc>o}<esc>O
 " inoremap $q ''<esc>i  " 不使用单引号自动补全
 " inoremap $e ""<esc>i  " 不使用双引号自动补全
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 通用缩写
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -104,10 +107,12 @@ iab xdate <C-r>=strftime("20%y/%m/%d")<cr>
 iab xdatetime <C-r>=strftime("20%y/%m/%d %H:%M:%S")<cr>
 iab xtime <C-r>=strftime("%H:%M:%S")<cr>
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Omni complete functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ack的搜索和展示，需要安装 ack.vim
@@ -137,6 +142,7 @@ vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 " To go to the previous search results do:
 "   <leader>p
 "
+
 map <leader>cc :botright cope<cr>
 map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>

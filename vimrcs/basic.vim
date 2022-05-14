@@ -1,14 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
-"       Amir Salihefendic — @amix3k
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
-"
 " Sections:
 "    -> 通用设置
 "    -> 用户界面
@@ -23,7 +13,6 @@
 "    -> 拼写检查
 "    -> Misc
 "    -> Helper functions
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""通用设置"""""""""""""""""""""""""""""""""""""
@@ -43,6 +32,9 @@ let mapleader = ","
 
 " ,w 快速保存
 nmap <leader>w :w!<cr>
+
+" ,q 快速保存并退出, todo:存在问题
+nmap <leader>q :wq!<cr>
 
 " 使用 :W 来sudo保存文件，针对需要管理员权限的文件
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
@@ -269,8 +261,7 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " 使用 0 来回到行的第一个非空字符
 map 0 ^
 
-" Move a line of text using ALT+[jk] or Command+[jk] on mac
-" 使用 ALT + [jk]或者Command + [jk] 来移动一行文本
+" 使用 ALT + [jk] 或者在mac上用 Command + [jk] 来移动一行文本
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z

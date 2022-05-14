@@ -27,6 +27,7 @@ map <leader>o :BufExplorer<cr>
 " => MRU plugin最近最常打开的文件
 """"""""""""""""""""""""""""""
 let MRU_Max_Entries = 400
+
 " 使用 ,f 搜索打开最近的文件
 map <leader>f :MRU<CR>
 
@@ -82,9 +83,14 @@ set grepprg=/bin/grep\ -nH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 文件树在右侧
 let g:NERDTreeWinPos = "right"
+
 let NERDTreeShowHidden=0
+
+" 忽略暂时的文件和文件夹
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+
 let g:NERDTreeWinSize=35
 
 " 快速打开或关闭NERDTree
@@ -96,6 +102,7 @@ map <leader>nf :NERDTreeFind<cr>
 
 " 关闭vim时，如果打开的文件除了NERDTree没有其他文件时，它自动关闭，减少多次按:q!
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-multiple-cursors
@@ -144,6 +151,7 @@ let g:lightline = {
       \ 'separator': { 'left': ' ', 'right': ' ' },
       \ 'subseparator': { 'left': ' ', 'right': ' ' }
       \ }
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom
