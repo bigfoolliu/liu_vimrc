@@ -97,7 +97,7 @@ set magic
 " 光标移动到括号的一边的时候，显示匹配的括号
 set showmatch 
 
-" How many tenths of a second to blink when matching brackets
+" 当匹配括号的时候每 0.2 s 闪烁一次
 set mat=2
 
 " 错误的时候不要提示音
@@ -176,9 +176,9 @@ set tabstop=4
 set lbr
 set tw=500
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+set ai "自动缩进
+set si "智能缩进
+set wrap "折叠行数
 
 
 """"""""""""""""""""""""""""""
@@ -234,7 +234,7 @@ map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Specify the behavior when switching between buffers 
+" 在 buffers 中切换的时候指定行为
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2

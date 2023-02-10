@@ -1,7 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Important: 
-"       This requries that you install https://github.com/amix/vimrc !
-"
+" 扩展配置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -28,11 +26,12 @@ set guioptions-=l
 set guioptions-=L
 
 " 颜色方案, 配色方案可选：peaksea（默认值），dracula，vim-colors-solarized，vim-irblack，vim-pyte，mayansmoke
+" 其他的配色方案可以将 git 目录复制到 my_plugins
 set background=dark
-colorscheme peaksea
+" colorscheme peaksea
 " colorscheme dracula
 " colorscheme palenight
-" colorscheme onedark
+colorscheme onedark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 快速编辑和重载vimrc的配置

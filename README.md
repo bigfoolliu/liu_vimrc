@@ -13,6 +13,11 @@
 ```sh
 cd ~/.vim_runtime
 git clone git://github.com/tpope/vim-rails.git my_plugins/vim-rails
+
+# 其他需要安装的插件，可以结合配置
+# onedark.vim, vim-css-color, 如果使用的话，将 git 目录复制过去，然后删除 .git
+git clone --depth=1 git@github.com:joshdick/onedark.vim.git my_plugins/onedark.vim
+git clone --depth=1 git@github.com:ap/vim-css-color.git my_plugins/vim-css-color
 ```
 
 ## 2.基本快捷键

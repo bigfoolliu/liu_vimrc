@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" This requires that you install https://github.com/amix/vimrc !
+" 插件相关配置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
@@ -33,7 +33,7 @@ map <leader>f :MRU<CR>
 
 
 """"""""""""""""""""""""""""""
-" => YankStack
+" => YankStack 对赋值删除文件的管理
 """"""""""""""""""""""""""""""
 let g:yankstack_yank_keys = ['y', 'd']
 
@@ -93,11 +93,11 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 let g:NERDTreeWinSize=35
 
-" 快速打开或关闭NERDTree
+" 快速打开或关闭NERDTree, 使用 ,nn 快速打开和折叠文件数，,nb 快速设置书签
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 
-" 快速查找文件
+" 快速查找文件, 使用 ,nf
 map <leader>nf :NERDTreeFind<cr>
 
 " 关闭vim时，如果打开的文件除了NERDTree没有其他文件时，它自动关闭，减少多次按:q!
@@ -105,7 +105,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-multiple-cursors
+" => vim-multiple-cursors 多光标使用
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:multi_cursor_use_default_mapping=0
 
@@ -163,7 +163,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ale (syntax checker and linter)
+" => Ale 语法检查和代码检查
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
 \   'javascript': ['jshint'],
