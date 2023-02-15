@@ -3,10 +3,10 @@
 set fileformats=unix,dos
 
 "显示行号
-set number
+"set number
 
 "显示当前行号
-set ruler
+"set ruler
 
 "设置相对行号
 set relativenumber
@@ -56,6 +56,9 @@ inoremap <C-E> <Esc>$
 "*********************普通模式配置***************************
 "普通模式将ctrl+l除了原有功能之外,还增加取消高亮搜索功能
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+" 普通模式，使用 oo 可以快速在当前行的下面插入一行
+nnoremap oo o<Esc>
 
 "*********************光标配置***************************
 "设置不同模式下的光标
