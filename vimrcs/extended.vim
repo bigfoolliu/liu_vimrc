@@ -1,5 +1,16 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 扩展配置
+"
+"    -> 用户界面相关
+"    -> 快速编辑和重载vimrc的配置
+"    -> 打开持续撤销，意味着你即使关闭了 bufffer/VIM，仍然可以
+"    -> 命令模式相关
+"    -> 括号相关
+"    -> 通用缩写
+"    -> Omni complete functions
+"    -> ack的搜索和展示，需要安装 ack.vim
+"    -> 帮助函数
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -130,24 +141,21 @@ map <leader>g :Ack!
 " 按 ,r 搜索并替换选定的文本
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
-" Do :help cope if you are unsure what cope is. It's super useful!
-"
-" When you search with Ack, display your results in cope by doing:
+" 使用 :help cope 命令来查看其含义, 很实用, copen 可以看成一个小的窗口
+" 当使用 ack 搜索的时候，在 copen 中展示结果
 "   <leader>cc
 "
-" To go to the next search result do:
+" 跳转到下一个搜索结果
 "   <leader>n
 "
-" To go to the previous search results do:
+" 跳转到前一个搜索结果
 "   <leader>p
-"
-
 map <leader>cc :botright cope<cr>
 map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 
-" Make sure that enter is never overriden in the quickfix window
+" 确保 enter 键在 copn 中不会被改写含义
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 

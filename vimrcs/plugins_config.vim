@@ -1,6 +1,23 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 插件相关配置
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"    -> 加载pathogen路径进行插件管理
+"    -> bufExplorer plugino快速打开历史文件列表
+"    -> MRU plugin最近最常打开的文件
+"    -> YankStack 对赋值删除文件的管理
+"    -> CTRL-P 快速找文件,在当前目录以及子目录
+"    -> ZenCoding 配置
+"    -> snipMate (beside <TAB> support <CTRL-j>)
+"    -> Vim grep
+"    -> Nerd Tree 文件组织树
+"    -> vim-multiple-cursors 多光标使用
+"    -> surround.vim config
+"    -> lightline 配置状态栏
+"    -> Vimroom
+"    -> Ale 语法检查和代码检查
+"    -> Git gutter (Git diff), git对比
+"    -> vim-gitgutter 配置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 " => 加载pathogen路径进行插件管理
@@ -59,7 +76,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
 
 """"""""""""""""""""""""""""""
-" => ZenCoding
+" => ZenCoding 配置
 """"""""""""""""""""""""""""""
 " Enable all functions in all modes
 let g:user_zen_mode='a'
@@ -81,7 +98,7 @@ set grepprg=/bin/grep\ -nH
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Nerd Tree
+" => Nerd Tree 文件组织树
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 文件树在右侧
 let g:NERDTreeWinPos = "right"
@@ -171,7 +188,7 @@ let g:ale_linters = {
 \   'go': ['go', 'golint', 'errcheck']
 \}
 
-"   'python': ['flake8'],
+" 'python': ['flake8'],
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
 " Disabling highlighting
@@ -187,4 +204,28 @@ let g:ale_lint_on_enter = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-gitgutter 配置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 追踪变更的时间
+set updatetime=100
+
+" git的增删改在状态栏显示
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
+
+" 设置标志列的颜色
+highlight! link SignColumn LineNr
+
+" 设置增，删，改的图标颜色
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+nmap ghp <Plug>(GitGutterPreviewHunk)
 

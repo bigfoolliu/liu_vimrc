@@ -22,28 +22,22 @@ git clone --depth=1 git@github.com:ap/vim-css-color.git my_plugins/vim-css-color
 
 ## 2.基本快捷键
 
-leader表示,
+使用 , 代替shift, leader 表示 ,
 
-### 2.1normal模式
+### 2.1 normal模式
 
 ```sh
-# 使用,代替shift
 # 使用空格键代替/
 ctrl + l  # 取消任意的高亮
 
 ,w  # 快速保存
 ,W  # 使用sudo保存文件
-```
 
-使用 ,enter 可以取消高亮选择
-
-```txt
+,enter 取消高亮选择，比如在搜索字段之后的选择
 map <silent> <leader><cr> :noh<cr>
 ```
 
-
-
-### 2.2窗口管理
+### 2.2 窗口管理
 
 ```sh
 map <leader>tn :tabnew<cr>  # 新增一个窗口
@@ -55,7 +49,7 @@ map <leader>tm :tabmove
 map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 ```
 
-### 2.3可视模式
+### 2.3 可视模式
 
 可以将选中的内容实用不用括号或者引号标注:
 
@@ -68,7 +62,7 @@ vnoremap $q <esc>`>a'<esc>`<i'<esc>
 vnoremap $e <esc>`>a`<esc>`<i`<esc>
 ```
 
-### 2.4插入模式
+### 2.4 插入模式
 
 - [vim缩写](https://copyfuture.com/blogs-details/20200827171424316v9mveqvpxz76a3j)
 
@@ -85,7 +79,7 @@ iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 - Space ：插入缩写后增加空格；
 - Enter ：插入缩写后进行换行。
 
-### 2.5命令模式
+### 2.5 命令模式
 
 如果编辑需要sudo的文件:
 
@@ -95,13 +89,13 @@ iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 
 ## 3.插件快捷键
 
-### 3.1ack全局查找
+### 3.1 ack全局查找
 
 ```sh
 ,g  # 使用ack全局内容查找，不打开第一个文件
 ```
 
-### 3.2nerdtree目录树
+### 3.2 nerdtree目录树
 
 ```sh
 ,nn  # 打开或关闭nertree
@@ -109,7 +103,7 @@ iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 ,nf  # 查找nerdtree中内容
 ```
 
-### 3.2commentary注释
+### 3.2 commentary注释
 
 ```sh
 # 普通模式下
@@ -118,7 +112,7 @@ gcc  # 注释/取消注释 当前行,配合.使用，注意要在英文输入法
 gcu  # 可以取消多行注释
 ```
 
-### 3.3ctrlp查找目录文件
+### 3.3 ctrlp查找目录文件
 
 ```sh
 ,j  # 查找当前目录下的文件
@@ -128,13 +122,13 @@ ctrl + f  # 同上
 ,b  # 搜索打开一个buffer
 ```
 
-### 3.4lightline状态栏配置
+### 3.4 lightline状态栏配置
 
 ```sh
 # 配置状态栏
 ```
 
-### 3.5bufexplorer历史文件
+### 3.5 bufexplorer历史文件
 
 ```sh
 # 可以打开历史文件列表以达到快速切换文件的目的
@@ -143,13 +137,13 @@ ctrl + f  # 同上
 q  # 退出
 ```
 
-### 3.6MRU最近打开的文件
+### 3.6 MRU最近打开的文件
 
 ```sh
 ,f  # 查找最近最常打开的文件
 ```
 
-### 3.7vim markdown用来支持生成markdown文件
+### 3.7 vim markdown用来支持生成markdown文件
 
 ```sh
 ]]  # 跳转到下一个header
@@ -160,13 +154,13 @@ q  # 退出
 :InsertToc  # 在当前位置插入toc
 ```
 
-### 3.8goyo.vim和vim-zenroom2
+### 3.8 goyo.vim和vim-zenroom2
 
 ```sh
 ,z  # 进入或者退出专注模式,主要针对markdown文件
 ```
 
-### 3.9SURROUND.VIM
+### 3.9 SURROUND.VIM
 
 https://vimawesome.com/plugin/surround-vim, 引号,括号的包围
 

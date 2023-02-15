@@ -17,7 +17,7 @@
 
 """"""""""""""""""""""""""通用设置"""""""""""""""""""""""""""""""""""""
 " 设置vim记忆行数
-set history=500
+set history=1000
 
 " 允许文件类型检查和缩进
 filetype plugin on
@@ -39,6 +39,10 @@ nmap <leader>q :wq!<cr>
 " 使用 :W 来sudo保存文件，针对需要管理员权限的文件
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
+"和系统共用一个剪贴板
+set clipboard+=unnamed
+"粘贴时不置换剪贴板,可以一次复制多次粘贴
+xnoremap p pgvy
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM 用户界面
@@ -63,8 +67,12 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
+" 显示行号
+set number
 " 显示当前行号
 set ruler
+"设置相对行号
+set relativenumber
 
 " 命令行的高度
 set cmdheight=1
@@ -115,6 +123,26 @@ endif
 " 在左侧加一点边距
 set foldcolumn=1
 
+
+"光标配置
+"设置不同模式下的光标
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+"光标对应模式
+"  1 -> blinking block
+"  2 -> solid block
+"  3 -> blinking underscore
+"  4 -> solid underscore
+"  5 -> blinking vertical bar
+"  6 -> solid vertical bar
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+"设置光标高亮行
+set cursorline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 颜色和字体
@@ -282,7 +310,7 @@ fun! CleanExtraSpaces()
     call setpos('.', save_cursor)
     call setreg('/', old_query)
 endfun
-
+" set autocmd
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
