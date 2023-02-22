@@ -6,9 +6,9 @@
 
 - 项目来自于：https://github.com/amix/vimrc ,自己加了写注释和改动。
 - 我的项目目录：https://github.com/bigfoolliu/liu_vimrc
-- 注意：my_configs.vim是个人的配置，my_plugins是我需要个性化安装的插件
+- 注意：my_configs.vim 是个人的配置，my_plugins 是我需要个性化安装的插件
 
-比如不同的主题等安装其他的插件，插件管理使用pathogen，如果是安装vim-rails:
+比如不同的主题等安装其他的插件，插件管理使用 pathogen，如果是安装 vim-rails:
 
 ```sh
 cd ~/.vim_runtime
@@ -27,39 +27,74 @@ git clone --depth=1 git@github.com:ap/vim-css-color.git my_plugins/vim-css-color
 ### 2.1 normal模式
 
 ```sh
-# 使用空格键代替/
-ctrl + l  # 取消任意的高亮
+# 使用空格键代替 /
 
-,w  # 快速保存
-,W  # 使用sudo保存文件
+# 取消任意的高亮
+ctrl + l
 
-,enter 取消高亮选择，比如在搜索字段之后的选择
-map <silent> <leader><cr> :noh<cr>
+# 快速保存
+,w
+# 使用sudo保存文件
+,W
+
+# 取消高亮选择，比如在搜索字段之后的选择
+,enter
+
+# 关闭当前的缓冲区文件
+,bd
+
+# 关闭所有的缓冲区文件
+,ba
+map <leader>ba :bufdo bd<cr>
+
+# 上/下一个缓冲区文件
+,bl
+,bh
 ```
 
 ### 2.2 窗口管理
 
 ```sh
-map <leader>tn :tabnew<cr>  # 新增一个窗口
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
+# 新增一个窗口
+,tn
+
+# 关闭一个窗口
+,tc
+
+# 窗口之间切换，下一个窗口
+,t,-<enter>
+
+# 将当前窗口移动位置
+,tm-窗口序号
 
 # 打开一个新的窗口,主要针对是当前目录下的文件
-map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
+,te
+
+# 关闭其他窗口，只保留当前窗口
+,to
 ```
 
 ### 2.3 可视模式
 
 可以将选中的内容实用不用括号或者引号标注:
 
-```txt
-vnoremap $1 <esc>`>a)<esc>`<i(<esc>
-vnoremap $2 <esc>`>a]<esc>`<i[<esc>
-vnoremap $3 <esc>`>a}<esc>`<i{<esc>
-vnoremap $$ <esc>`>a"<esc>`<i"<esc>
-vnoremap $q <esc>`>a'<esc>`<i'<esc>
-vnoremap $e <esc>`>a`<esc>`<i`<esc>
+```sh
+# 将选中文本用 () 包围
+v-选中文本-$1
+# 将选中文本用 [] 包围
+v-选中文本-$2
+# 将选中文本用 {} 包围
+v-选中文本-$3
+
+# 将选中文本用 "" 包围
+v-选中文本-$$
+# 将选中文本用 '' 包围
+v-选中文本-$q
+# 将选中文本用 `` 包围
+v-选中文本-$e
+
+# 搜索被选中的文本
+v-选中文本-*
 ```
 
 ### 2.4 插入模式
@@ -68,22 +103,23 @@ vnoremap $e <esc>`>a`<esc>`<i`<esc>
 
 插入模式下输入 xdate, 然后esc即可输入当前时间:
 
-```txt
-iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
+```sh
+# 当前日期, eg： 2023/02/22
+xdate-<esc>
+# 当前日期和时间, eg： 2023/02/22 12:08:20
+xdatetime-<esc>
+# 输入xdate，之后：
+# - Ctrl + ] ：插入缩写后停留在插入模式，推荐；
+# - ESC ：插入缩写后回到普通模式；
+# - Space ：插入缩写后增加空格；
+# - Enter ：插入缩写后进行换行。
 ```
-
-输入xdate，之后：
-
-- Ctrl + ] ：插入缩写后停留在插入模式，推荐；
-- ESC ：插入缩写后回到普通模式；
-- Space ：插入缩写后增加空格；
-- Enter ：插入缩写后进行换行。
 
 ### 2.5 命令模式
 
 如果编辑需要sudo的文件:
 
-```txt
+```sh
 :W
 ```
 
