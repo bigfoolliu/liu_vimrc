@@ -11,6 +11,9 @@
 比如不同的主题等安装其他的插件，插件管理使用 pathogen，如果是安装 vim-rails:
 
 ```sh
+cd ~
+git clone git@github.com:bigfoolliu/liu_vimrc.git .vim_runtime 
+
 cd ~/.vim_runtime
 git clone git@github.com:tpope/vim-rails.git my_plugins/vim-rails
 
