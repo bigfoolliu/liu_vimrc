@@ -1,11 +1,19 @@
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 不同类型文件的配置
-""""""""""""""""""""""""""""""
+"
+" Python
+"
+" JavaScript
+" 
+" Shell
+"
+" Markdown
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-""""""""""""""""""""""""""""""
-" => Python 选项
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Python 选项
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let python_highlight_all = 1
 au FileType python syn keyword pythonDecorator True None False self
 
@@ -24,9 +32,9 @@ au FileType python map <buffer> <leader>C ?class
 au FileType python map <buffer> <leader>D ?def 
 
 
-""""""""""""""""""""""""""""""
-" => JavaScript 选项
-"""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JavaScript 选项
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 au FileType javascript setl nocindent
@@ -50,9 +58,9 @@ au FileType javascript,typescript inoremap <buffer> $f // --- PH<esc>FP2xi
 " endfunction
 
 
-""""""""""""""""""""""""""""""
-" => CoffeeScript section
-"""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CoffeeScript section
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! CoffeeScriptFold()
     setl foldmethod=indent
     setl foldlevelstart=1
@@ -62,9 +70,9 @@ au FileType coffee call CoffeeScriptFold()
 au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
 
-""""""""""""""""""""""""""""""
-" => Shell 相关
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Shell 相关
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if exists('$TMUX') 
     if has('nvim')
         set termguicolors
@@ -74,13 +82,14 @@ if exists('$TMUX')
 endif
 
 
-""""""""""""""""""""""""""""""
-" => Twig section
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Twig section
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufRead *.twig set syntax=html filetype=html
 
 
-""""""""""""""""""""""""""""""
-" => Markdown
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Markdown
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let vim_markdown_folding_disabled = 1
+

@@ -12,7 +12,7 @@
 
 ```sh
 cd ~
-git clone git@github.com:bigfoolliu/liu_vimrc.git .vim_runtime 
+git clone git@github.com:bigfoolliu/liu_vimrc.git .vim_runtime
 
 cd ~/.vim_runtime
 git clone git@github.com:tpope/vim-rails.git my_plugins/vim-rails
